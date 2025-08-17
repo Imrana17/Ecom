@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { NavLink, useLocation } from 'react-router-dom';
 import { Button } from './button';
 import { Badge } from './badge';
 import { useAuth } from '@/context/AuthContext';
@@ -37,7 +37,7 @@ const Navbar = () => {
   ];
 
   const isActivePath = (path: string) => {
-    return location.pathname === path || (path === '/' && location.pathname === '');
+    return location.pathname === path;
   };
 
   const handleCartClick = () => {
@@ -55,10 +55,10 @@ const Navbar = () => {
         <div className="flex justify-between h-16">
           {/* Logo */}
           <div className="flex items-center">
-            <Link to="/" className="flex items-center space-x-2">
+            <NavLink to="/" className="flex items-center space-x-2">
               <UtensilsCrossed className="h-8 w-8 text-primary" />
               <span className="font-bold text-xl text-foreground">FlavorDrive</span>
-            </Link>
+            </NavLink>
           </div>
 
           {/* Desktop Navigation */}
@@ -66,18 +66,20 @@ const Navbar = () => {
             {navigation.map((item) => {
               const Icon = item.icon;
               return (
-                <Link
+                <NavLink
                   key={item.name}
                   to={item.href}
-                  className={`flex items-center space-x-1 px-3 py-2 rounded-md text-sm font-medium transition-smooth ${
-                    isActivePath(item.href)
-                      ? 'text-primary bg-primary/10'
-                      : 'text-muted-foreground hover:text-foreground hover:bg-muted'
-                  }`}
+                  className={({ isActive }) =>
+                    `flex items-center space-x-1 px-3 py-2 rounded-md text-sm font-medium transition-smooth ${
+                      isActive
+                        ? 'text-primary bg-primary/10'
+                        : 'text-muted-foreground hover:text-foreground hover:bg-muted'
+                    }`
+                  }
                 >
                   <Icon className="h-4 w-4" />
                   <span>{item.name}</span>
-                </Link>
+                </NavLink>
               );
             })}
           </div>
@@ -113,16 +115,16 @@ const Navbar = () => {
                 </DropdownMenuTrigger>
                 <DropdownMenuContent align="end" className="w-48">
                   <DropdownMenuItem asChild>
-                    <Link to="/account" className="flex items-center space-x-2">
+                    <NavLink to="/account" className="flex items-center space-x-2">
                       <User className="h-4 w-4" />
                       <span>My Account</span>
-                    </Link>
+                    </NavLink>
                   </DropdownMenuItem>
                   <DropdownMenuItem asChild>
-                    <Link to="/orders" className="flex items-center space-x-2">
+                    <NavLink to="/orders" className="flex items-center space-x-2">
                       <ClipboardList className="h-4 w-4" />
                       <span>My Orders</span>
-                    </Link>
+                    </NavLink>
                   </DropdownMenuItem>
                   <DropdownMenuSeparator />
                   <DropdownMenuItem onClick={handleLogout} className="text-destructive">
@@ -134,10 +136,10 @@ const Navbar = () => {
             ) : (
               <div className="flex items-center space-x-2">
                 <Button variant="ghost" size="sm" asChild>
-                  <Link to="/login">Sign In</Link>
+                  <NavLink to="/login">Sign In</NavLink>
                 </Button>
                 <Button size="sm" asChild>
-                  <Link to="/register">Sign Up</Link>
+                  <NavLink to="/register">Sign Up</NavLink>
                 </Button>
               </div>
             )}
@@ -179,32 +181,34 @@ const Navbar = () => {
             {navigation.map((item) => {
               const Icon = item.icon;
               return (
-                <Link
+                <NavLink
                   key={item.name}
                   to={item.href}
                   onClick={() => setIsOpen(false)}
-                  className={`flex items-center space-x-3 px-3 py-3 rounded-md text-base font-medium transition-smooth ${
-                    isActivePath(item.href)
-                      ? 'text-primary bg-primary/10'
-                      : 'text-muted-foreground hover:text-foreground hover:bg-muted'
-                  }`}
+                  className={({ isActive }) =>
+                    `flex items-center space-x-3 px-3 py-3 rounded-md text-base font-medium transition-smooth ${
+                      isActive
+                        ? 'text-primary bg-primary/10'
+                        : 'text-muted-foreground hover:text-foreground hover:bg-muted'
+                    }`
+                  }
                 >
                   <Icon className="h-5 w-5" />
                   <span>{item.name}</span>
-                </Link>
+                </NavLink>
               );
             })}
             
             {user ? (
               <>
-                <Link
+                <NavLink
                   to="/account"
                   onClick={() => setIsOpen(false)}
                   className="flex items-center space-x-3 px-3 py-3 rounded-md text-base font-medium text-muted-foreground hover:text-foreground hover:bg-muted transition-smooth"
                 >
                   <User className="h-5 w-5" />
                   <span>My Account</span>
-                </Link>
+                </NavLink>
                 <button
                   onClick={handleLogout}
                   className="flex items-center space-x-3 px-3 py-3 rounded-md text-base font-medium text-destructive hover:bg-destructive/10 transition-smooth w-full text-left"
@@ -216,10 +220,10 @@ const Navbar = () => {
             ) : (
               <div className="flex flex-col space-y-2 px-3 py-3">
                 <Button variant="ghost" asChild onClick={() => setIsOpen(false)}>
-                  <Link to="/login">Sign In</Link>
+                  <NavLink to="/login">Sign In</NavLink>
                 </Button>
                 <Button asChild onClick={() => setIsOpen(false)}>
-                  <Link to="/register">Sign Up</Link>
+                  <NavLink to="/register">Sign Up</NavLink>
                 </Button>
               </div>
             )}
