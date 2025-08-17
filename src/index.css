@@ -1,0 +1,198 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Food ordering design system with warm, appetizing colors */
+
+@layer base {
+  :root {
+    /* Base colors */
+    --background: 35 100% 98%;
+    --foreground: 25 15% 15%;
+
+    /* Cards and surfaces */
+    --card: 0 0% 100%;
+    --card-foreground: 25 15% 15%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 25 15% 15%;
+
+    /* Brand colors - warm food palette */
+    --primary: 15 85% 55%; /* Tomato red */
+    --primary-foreground: 0 0% 100%;
+    --primary-glow: 15 95% 65%;
+
+    --secondary: 35 95% 60%; /* Golden orange */
+    --secondary-foreground: 25 15% 15%;
+
+    --accent: 45 100% 75%; /* Warm yellow */
+    --accent-foreground: 25 15% 15%;
+
+    /* UI colors */
+    --muted: 35 25% 95%;
+    --muted-foreground: 25 8% 45%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 35 15% 88%;
+    --input: 35 15% 88%;
+    --ring: 15 85% 55%;
+
+    --radius: 0.75rem;
+
+    /* Food-specific colors */
+    --success: 120 60% 50%; /* Fresh green */
+    --success-foreground: 0 0% 100%;
+    
+    --warning: 45 95% 55%; /* Cheese yellow */
+    --warning-foreground: 25 15% 15%;
+
+    /* Gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(15 85% 55%), hsl(35 95% 60%));
+    --gradient-accent: linear-gradient(90deg, hsl(35 95% 60%), hsl(45 100% 75%));
+    --gradient-warm: linear-gradient(180deg, hsl(35 100% 98%), hsl(35 25% 95%));
+
+    /* Shadows */
+    --shadow-warm: 0 4px 20px -2px hsl(15 85% 55% / 0.15);
+    --shadow-glow: 0 0 30px hsl(15 95% 65% / 0.3);
+    --shadow-card: 0 2px 8px -1px hsl(25 15% 15% / 0.1);
+
+    /* Animation */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    /* Dark mode with rich food tones */
+    --background: 25 25% 8%;
+    --foreground: 35 25% 95%;
+
+    --card: 25 20% 12%;
+    --card-foreground: 35 25% 95%;
+
+    --popover: 25 20% 12%;
+    --popover-foreground: 35 25% 95%;
+
+    --primary: 15 85% 55%;
+    --primary-foreground: 0 0% 100%;
+    --primary-glow: 15 95% 65%;
+
+    --secondary: 35 80% 45%;
+    --secondary-foreground: 35 25% 95%;
+
+    --accent: 45 90% 65%;
+    --accent-foreground: 25 25% 8%;
+
+    --muted: 25 15% 18%;
+    --muted-foreground: 35 8% 65%;
+
+    --destructive: 0 75% 55%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 25 15% 22%;
+    --input: 25 15% 22%;
+    --ring: 15 85% 55%;
+
+    --success: 120 50% 45%;
+    --success-foreground: 0 0% 100%;
+    
+    --warning: 45 85% 50%;
+    --warning-foreground: 25 25% 8%;
+
+    /* Dark mode gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(15 85% 45%), hsl(35 80% 45%));
+    --gradient-accent: linear-gradient(90deg, hsl(35 80% 45%), hsl(45 90% 55%));
+    --gradient-warm: linear-gradient(180deg, hsl(25 25% 8%), hsl(25 15% 18%));
+
+    --shadow-warm: 0 4px 20px -2px hsl(15 85% 25% / 0.4);
+    --shadow-glow: 0 0 30px hsl(15 95% 35% / 0.4);
+    --shadow-card: 0 2px 8px -1px hsl(0 0% 0% / 0.3);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans;
+  }
+
+  /* Smooth transitions for all interactive elements */
+  button, a, input, select, textarea {
+    transition: var(--transition-smooth);
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-muted;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-primary/30 rounded-full;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-primary/50;
+  }
+}
+
+@layer utilities {
+  .gradient-hero {
+    background: var(--gradient-hero);
+  }
+  
+  .gradient-accent {
+    background: var(--gradient-accent);
+  }
+  
+  .gradient-warm {
+    background: var(--gradient-warm);
+  }
+  
+  .shadow-warm {
+    box-shadow: var(--shadow-warm);
+  }
+  
+  .shadow-glow {
+    box-shadow: var(--shadow-glow);
+  }
+  
+  .shadow-card {
+    box-shadow: var(--shadow-card);
+  }
+  
+  .transition-smooth {
+    transition: var(--transition-smooth);
+  }
+  
+  .transition-bounce {
+    transition: var(--transition-bounce);
+  }
+
+  .text-balance {
+    text-wrap: balance;
+  }
+}
