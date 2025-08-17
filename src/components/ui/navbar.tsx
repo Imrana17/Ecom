@@ -37,7 +37,7 @@ const Navbar = () => {
   ];
 
   const isActivePath = (path: string) => {
-    return location.pathname === path;
+    return location.pathname === path || (path === '/' && location.pathname === '');
   };
 
   const handleCartClick = () => {
