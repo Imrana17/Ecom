@@ -9,9 +9,13 @@ import {
   Clock, 
   Truck,
   UtensilsCrossed,
-  Heart
+  Heart,
+  Car
 } from 'lucide-react';
 import heroImage from '@/assets/hero-food.jpg';
+import food1 from '../assets/shroomstruffles.jpg';
+import food2 from '../assets/grilled-salmon-recipe-2.jpg';
+import food3 from '../assets/delicious-beef-burger-scaled.webp';
 
 const Index = () => {
   // Mock featured items - these would come from API
@@ -20,7 +24,7 @@ const Index = () => {
       id: '1',
       name: 'Truffle Pasta',
       price: 24.99,
-      image: '/placeholder.svg',
+      image: food1,
       rating: 4.8,
       preparationTime: 25,
     },
@@ -28,7 +32,7 @@ const Index = () => {
       id: '2', 
       name: 'Grilled Salmon',
       price: 28.99,
-      image: '/placeholder.svg',
+      image: food2,
       rating: 4.9,
       preparationTime: 20,
     },
@@ -36,7 +40,7 @@ const Index = () => {
       id: '3',
       name: 'Wagyu Burger',
       price: 32.99,
-      image: '/placeholder.svg',
+      image: food3,
       rating: 4.7,
       preparationTime: 15,
     }
@@ -60,10 +64,9 @@ const Index = () => {
         <div className="absolute inset-0 bg-black/40" />
         <div className="relative z-10 h-full flex items-center">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-white">
-            <h1 className="text-4xl md:text-6xl font-bold mb-6 text-balance">
+            <h1 className="text-4xl md:text-6xl font-bold mb-6 text-balance text-orange-600">
               Delicious Food
-              <span className="block gradient-hero bg-clip-text text-transparent">
-                Delivered Fast
+              <span className="block gradient-hero bg-clip-text text-black text-3xl mt-5">
               </span>
             </h1>
             <p className="text-xl md:text-2xl mb-8 text-white/90 max-w-2xl mx-auto text-balance">
@@ -71,13 +74,13 @@ const Index = () => {
               Fresh ingredients, expert chefs, lightning-fast delivery.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" className="text-lg px-8 py-6" asChild>
+              <Button size="lg" className="text-lg px-8 py-6 bg-orange-600 text-black hover:bg-orange-700" asChild>
                 <Link to="/menu">
                   Order Now
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </Link>
               </Button>
-              <Button variant="outline" size="lg" className="text-lg px-8 py-6 bg-white/10 border-white/20 text-white hover:bg-white/20" asChild>
+              <Button variant="outline" size="lg" className="text-lg px-8 py-6 bg-white/10 border-white/20 text-white hover:bg-white/20 hover:text-black" asChild>
                 <Link to="/about">Learn More</Link>
               </Button>
             </div>
@@ -220,7 +223,7 @@ const Index = () => {
                 Start Ordering
               </Link>
             </Button>
-            <Button size="lg" variant="outline" className="text-lg px-8 py-6 border-white/20 text-white hover:bg-white/10" asChild>
+            <Button size="lg" variant="outline" className="text-lg px-8 py-6 border-white/20 text-black bg-white hover:bg-black hover:text-white" asChild>
               <Link to="/contact">Contact Us</Link>
             </Button>
           </div>

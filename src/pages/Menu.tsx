@@ -13,6 +13,12 @@ import {
   Filter
 } from 'lucide-react';
 import { toast } from '@/hooks/use-toast';
+import food1 from '../assets/shroomstruffles.jpg';
+import food2 from '../assets/grilled-salmon-recipe-2.jpg';
+import food3 from '../assets/delicious-beef-burger-scaled.webp';
+import food4 from '../assets/Avocado-Caesar-Salad-FI.jpg';
+import food5 from '../assets/chocolate-molten-lava-cakes.jpg';
+import food6 from '../assets/fruit-smoothie-resize-8.jpg';
 
 const Menu = () => {
   const [searchTerm, setSearchTerm] = useState('');
@@ -35,7 +41,7 @@ const Menu = () => {
       description: 'Fresh pasta with truffle oil, wild mushrooms, and parmesan cheese',
       price: 24.99,
       category: 'mains',
-      image: '/placeholder.svg',
+      image: food1,
       rating: 4.8,
       preparationTime: 25,
       isAvailable: true,
@@ -46,7 +52,7 @@ const Menu = () => {
       description: 'Fresh salmon fillet with herb butter and seasonal vegetables',
       price: 28.99,
       category: 'mains',
-      image: '/placeholder.svg',
+      image: food2,
       rating: 4.9,
       preparationTime: 20,
       isAvailable: true,
@@ -57,7 +63,7 @@ const Menu = () => {
       description: 'Premium wagyu beef patty with aged cheddar and truffle fries',
       price: 32.99,
       category: 'mains',
-      image: '/placeholder.svg',
+      image: food3,
       rating: 4.7,
       preparationTime: 15,
       isAvailable: true,
@@ -68,7 +74,7 @@ const Menu = () => {
       description: 'Crisp romaine lettuce, parmesan, croutons, and house caesar dressing',
       price: 14.99,
       category: 'appetizers',
-      image: '/placeholder.svg',
+      image: food4,
       rating: 4.6,
       preparationTime: 10,
       isAvailable: true,
@@ -79,7 +85,7 @@ const Menu = () => {
       description: 'Warm chocolate cake with molten center, served with vanilla ice cream',
       price: 9.99,
       category: 'desserts',
-      image: '/placeholder.svg',
+      image: food5,
       rating: 4.9,
       preparationTime: 12,
       isAvailable: true,
@@ -90,7 +96,7 @@ const Menu = () => {
       description: 'Blend of seasonal fruits with yogurt and honey',
       price: 7.99,
       category: 'beverages',
-      image: '/placeholder.svg',
+      image: food6,
       rating: 4.5,
       preparationTime: 5,
       isAvailable: true,

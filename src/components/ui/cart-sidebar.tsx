@@ -112,7 +112,7 @@ const CartSidebar = () => {
 
           {/* Order Summary */}
           {items.length > 0 && (
-            <div className="border-t pt-4 space-y-4">
+            <div className="border-t pt-4 space-y-4 mb-10">
               <div className="space-y-2 text-sm">
                 <div className="flex justify-between">
                   <span>Subtotal</span>

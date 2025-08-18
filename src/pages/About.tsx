@@ -219,10 +219,10 @@ const About = () => {
             Join thousands of satisfied customers and discover why we're the preferred choice for food delivery.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" variant="secondary" asChild>
+            <Button size="lg" variant="secondary" asChild className="">
               <Link to="/menu">Order Now</Link>
             </Button>
-            <Button size="lg" variant="outline" className="border-white/20 text-white hover:bg-white/10" asChild>
+            <Button size="lg" variant="outline" className="border-white/20 text-black bg-white hover:bg-black hover:text-white" asChild>
               <Link to="/contact">Contact Us</Link>
             </Button>
           </div>
