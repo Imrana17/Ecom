@@ -2,11 +2,7 @@ import axios from 'axios';
 
 // Create axios instance with base configuration
 const apiClient = axios.create({
-<<<<<<<<< Temporary merge branch 1
   baseURL: process.env.REACT_APP_API_URL || 'http://localhost:8000/restaurant/api/',
-=========
-  baseURL: process.env.REACT_APP_API_URL || 'http://localhost/restaurant/api',
->>>>>>>>> Temporary merge branch 2
   timeout: 10000,
   headers: {
     'Content-Type': 'application/json',
